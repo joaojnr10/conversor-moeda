@@ -58,7 +58,7 @@ function convertValues() { // Função para converter
     currencyFromImg.src = currencyImages[from]; // Atualiza o nome e imagem da moeda de origem
     currencyName.innerText = currencyNames[to];
     currencyImg.src = currencyImages[to];
-    
+
 }
 
 // Atualiza ao mudar qualquer select
