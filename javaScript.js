@@ -11,7 +11,7 @@ const currencyFromImg = document.querySelector(".moeda img") // pega a imagem
 
 // Taxas de câmbio fixas (apenas exemplo)
 const exchangeRates = {
-    BRL: { USD: 5.25, EUR: 6.04, GBP: 6.96, BTC: 0.0000027, CHF: 6.68, BRL: 1 },
+    BRL: { USD: 5.25, EUR: 6.04, GBP: 6.96, BTC: 0.0000027, CHF: 6.68, BRL: 1 }, // moeda de origem e as taxas de câmbio
     USD: { BRL: 5.25, EUR: 0.87, GBP: 0.75, BTC: 0.000014, CHF: 0.79, USD: 1 },
     EUR: { BRL: 6.5, USD: 1.15, GBP: 0.86, BTC: 0.000016, CHF: 0.90, EUR: 1 },
     GBP: { BRL: 7.01, USD: 1.34, EUR: 1.16, BTC: 0.000019, CHF: 1.05, GBP: 1 },
