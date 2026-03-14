@@ -44,6 +44,15 @@ select, input {
     font-size: 16px;
     color: #555555;
     cursor: pointer;
+
+}
+
+input[type=number]::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.input-error {
+    border: 2px solid red;
 }
 
 
@@ -107,3 +116,4 @@ section {
     font-size: 20px;
     font-weight: 700;
 }
+

@@ -43,7 +43,16 @@ function convertValues() { // Função para converter
     const to = currencyToSelect.value; // pega o select
     const value = parseFloat(inputValue.value.replace(",", ".")); // pega o input
 
-    if (isNaN(value)) return alert("Digite um valor válido"); // verifica se o valor digitado é um número
+    if (isNaN(value)) {
+
+        inputValue.classList.add("input-error")
+
+        alert("Digite um valor válido")
+
+        return
+    }
+
+    inputValue.classList.remove("input-error")
 
     const rate = exchangeRates[from][to]; // pega a taxa de câmbio
     const converted = value * rate; // converte o valor
@@ -52,12 +61,11 @@ function convertValues() { // Função para converter
     currencyValueToConvert.innerText = new Intl.NumberFormat("pt-BR", { style: "currency", currency: from }).format(value); // Atualiza o paragrafo
     currencyValue.innerText = new Intl.NumberFormat("en-US", { style: "currency", currency: to }).format(converted); // Atualiza o paragrafo
 
-    // Atualiza o nome e imagem da moeda de origem
+    // Atualiza o nome da moeda de origem
     currencyFromName.innerText = currencyNames[from];
-    // Atualiza o nome e imagem da moeda de destino
-    currencyFromImg.src = currencyImages[from]; // Atualiza o nome e imagem da moeda de origem
-    currencyName.innerText = currencyNames[to];
-    currencyImg.src = currencyImages[to];
+    currencyFromImg.src = currencyImages[from]; // Atualiza a imagem da moeda de origem
+    currencyName.innerText = currencyNames[to]; // Atualiza o nome da moeda de destino
+    currencyImg.src = currencyImages[to]; // Atualiza a imagem da moeda de destino
 
 }
 
@@ -65,3 +73,7 @@ function convertValues() { // Função para converter
 currencyFromSelect.addEventListener("change", convertValues); // quando o select for alterado, ele vai executar essa funcao
 currencyToSelect.addEventListener("change", convertValues);
 convertButton.addEventListener("click", convertValues);
+
+inputValue.addEventListener("input", () => {
+    inputValue.classList.remove("input-error") // quando o input for alterado, ele vai remove a classe de erro
+})
